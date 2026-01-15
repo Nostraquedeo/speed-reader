@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Speed Reader — RSVP demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Speed Reader (RSVP) — demo</h1>
+
+    <div class="controls">
+      <label class="control-row">
+        Upload .txt:
+        <input id="fileInput" type="file" accept=".txt,text/plain" />
+      </label>
+
+      <label class="control-row">
+        WPM:
+        <input id="wpm" type="number" min="50" max="2000" value="400" />
+      </label>
+
+      <label class="control-row">
+        Font size:
+        <input id="fontSize" type="range" min="18" max="120" value="42" />
+      </label>
+
+      <button id="startBtn" class="control-btn">Start</button>
+      <button id="stopBtn" class="control-btn">Stop</button>
+      <button id="clearBtn" class="control-btn">Clear</button>
+    </div>
+
+    <textarea id="inputText" placeholder="Paste or load text here..." rows="6">
+This is a short demo of Speed Reader. The one word at a time stays centered and one letter (the ORP) is colored red.
+    </textarea>
+
+    <div class="reader-area" role="region" aria-label="Reader">
+      <div class="focus-line">
+        <div id="alignment-guide" class="alignment-guide" aria-hidden="true"></div>
+        <div id="wordContainer" class="word-container" aria-live="polite" aria-atomic="true">
+          <!-- word parts will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <p class="tips">Tip: Upload a .txt file or paste text, choose WPM, then press Start. Stop will pause playback and keep position. Space toggles start/stop.</p>
+
+    <script src="app.js"></script>
+  </main>
+</body>
+</html>

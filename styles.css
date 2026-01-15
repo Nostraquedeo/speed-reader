@@ -1,0 +1,129 @@
+:root{
+  --bg:#0f1720;
+  --card:#0b1220;
+  --text:#e6eef6;
+  --muted:#9fb0c8;
+  --accent:#ef4444;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,#081123 0%, #0b1220 100%);
+  color:var(--text);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:28px;
+}
+
+.app{
+  width:960px;
+  max-width:95%;
+}
+
+h1{margin:0 0 12px;font-size:18px;color:var(--text)}
+
+.controls{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+.control-row{
+  font-size:13px;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.control-row input[type="number"]{
+  width:90px;
+  padding:6px 8px;
+  border-radius:6px;
+  background:#061426;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.control-row input[type="range"]{
+  vertical-align:middle;
+}
+.control-btn{
+  padding:8px 12px;
+  border-radius:8px;
+  background:#1b2a3a;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.03);
+  cursor:pointer;
+}
+
+/* textarea */
+textarea#inputText{
+  width:100%;
+  margin:6px 0 14px 0;
+  resize:vertical;
+  background:#061426;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.03);
+  padding:10px;
+  border-radius:8px;
+  font-size:14px;
+  min-height:84px;
+}
+
+/* READER */
+.reader-area{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:10px;
+  padding:26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+.focus-line{
+  width:100%;
+  max-width:780px;
+  height:140px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.alignment-guide{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:2px;
+  height:56px;
+  background:rgba(255,255,255,0.06);
+  z-index:1;
+}
+
+/* Word container will be absolutely positioned so ORP letter is at center */
+.word-container{
+  position:absolute;
+  z-index:2;
+  white-space:nowrap;
+  text-align:left;
+  display:inline-block;
+  line-height:1;
+  font-variant-ligatures: none;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-weight:600;
+  font-size:42px; /* controlled from JS */
+  color:var(--text);
+}
+
+/* parts */
+.word-left, .word-right { color:var(--muted); }
+.word-core { color:var(--accent); }
+
+.tips{color:var(--muted); margin-top:10px; font-size:13px}

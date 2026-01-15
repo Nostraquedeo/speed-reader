@@ -1,17 +1,18 @@
 :root{
-  --bg:#0f1720;
-  --card:#0b1220;
-  --text:#e6eef6;
-  --muted:#9fb0c8;
-  --accent:#ef4444;
+  --bg:#000000;        /* pure black background */
+  --card:#000000;
+  --text:#ffffff;      /* general page text (white) */
+  --muted:#e6eef6;     /* lighter white for muted text */
+  --accent:#ef4444;    /* ORP (red) */
 }
 
+/* Reset / layout */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
   font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:linear-gradient(180deg,#081123 0%, #0b1220 100%);
+  background: var(--bg);
   color:var(--text);
   display:flex;
   align-items:flex-start;
@@ -24,8 +25,13 @@ body{
   max-width:95%;
 }
 
-h1{margin:0 0 12px;font-size:18px;color:var(--text)}
+h1{
+  margin:0 0 12px;
+  font-size:18px;
+  color:var(--text);
+}
 
+/* Controls */
 .controls{
   display:flex;
   gap:12px;
@@ -44,9 +50,9 @@ h1{margin:0 0 12px;font-size:18px;color:var(--text)}
   width:90px;
   padding:6px 8px;
   border-radius:6px;
-  background:#061426;
+  background:#071018;
   color:var(--text);
-  border:1px solid rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.04);
 }
 .control-row input[type="range"]{
   vertical-align:middle;
@@ -54,9 +60,9 @@ h1{margin:0 0 12px;font-size:18px;color:var(--text)}
 .control-btn{
   padding:8px 12px;
   border-radius:8px;
-  background:#1b2a3a;
+  background:#0b1318;
   color:var(--text);
-  border:1px solid rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.04);
   cursor:pointer;
 }
 
@@ -65,9 +71,9 @@ textarea#inputText{
   width:100%;
   margin:6px 0 14px 0;
   resize:vertical;
-  background:#061426;
+  background:#031016;
   color:var(--text);
-  border:1px solid rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.04);
   padding:10px;
   border-radius:8px;
   font-size:14px;
@@ -76,7 +82,7 @@ textarea#inputText{
 
 /* READER */
 .reader-area{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  background: var(--bg); /* black reader background */
   border-radius:10px;
   padding:26px;
   display:flex;
@@ -122,8 +128,8 @@ textarea#inputText{
   color:var(--text);
 }
 
-/* parts */
-.word-left, .word-right { color:var(--muted); }
-.word-core { color:var(--accent); }
+/* parts: non-ORP letters white, ORP red */
+.word-left, .word-right { color: #ffffff; } /* white letters */
+.word-core { color:var(--accent); }         /* red ORP */
 
 .tips{color:var(--muted); margin-top:10px; font-size:13px}
